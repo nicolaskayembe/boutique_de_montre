@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+
+  {% block content %}
+
+<h1 class="text-center display-2 "> Liste des articles
+    <span class="placeholder col-12"></span>
+</h1>
+<div class="row">
+{% for produit in produits %}
+
+
+ <div class="col-md-3">
+    <div class="card" style="width: 18rem;">
+        <img src="{{ produit.get_image_url }}" alt="..." class="card-img-top">
+        <div class="card-body">
+             <h5 class="card-title"> {{ produit.nom }} prix: ${{ produit.prix }}</h5>
+             <p class="card-text"> {{ produit.description }}</p>
+             <a href="#" class="btn btn-primary"> contact +243 998961835 </a>
+        </div>
+    </div>
+ </div>
+
+
+{% endfor %}
+</div>
+
+{% endblock %}
